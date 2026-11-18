@@ -1,6 +1,6 @@
-# ✦ Manager AI PRO ✦
+#  Manager AI PRO 
 
-> **Trilingual CLI Manager (PT-BR / EN / ZH-CN) for Google AI Pro (5TB) Trial Activation & Subscription Proration Stacking (up to 30 Months)**  
+> **CLI Manager (PT / EN / CN) for Google AI Pro (5TB) Trial Activation & Subscription Proration Stacking (up to 30 Months)**  
 > **Gerenciador CLI Trilíngue para Ativação e Acumulação do Google AI Pro (5TB) por até 30 Meses**  
 > **Google AI Pro (5TB) 免费试用激活与订阅升级叠加三语 CLI 管理器（最高累计 30 个月）**
 
@@ -21,11 +21,11 @@
 
 # 🇧🇷 Documentação em Português (PT-BR)
 
-## 📖 Visão Geral e Transparência 100% Open Source
+## 📖 Visão Geral e Transparência 
 
 O **Manager AI PRO** é uma interface de linha de comando (CLI) interativa, moderna e 100% transparente que unifica todas as etapas de verificação de ambiente, injeção do `BillingClient` via Frida e acumulação (stacking) de ofertas gratuitas do plano **Google AI Pro (5 TB)** diretamente pelo aplicativo oficial **Google One** em um emulador Android 12 com Root.
 
-### Como funciona por baixo dos panos? (Sem segredos)
+### Como funciona por baixo dos panos?
 
 A Google Play Store possui ofertas promocionais de teste gratuito para o SKU `g1.2tb.ai.subs_variant` (**Google AI Pro 5TB**) que não aparecem na interface web comum, mas são retornadas pela API nativa `BillingClient.queryProductDetailsAsync` dentro do Android:
 
@@ -54,9 +54,8 @@ A Google Play Store possui ofertas promocionais de teste gratuito para o SKU `g1
 
 ## 🛠️ Pré-requisitos Obrigatórios
 
-1. **Emulador Exclusivo — MuMuPlayer ([https://www.mumuplayer.com/pt/](https://www.mumuplayer.com/pt/)) no ANDROID 12:**
-   - O **[MuMuPlayer](https://www.mumuplayer.com/pt/)** é o **ÚNICO emulador suportado** pelo projeto.
-   - O MuMuPlayer **PRECISA estar rodando o Android 12**.
+1. **Emulador — MuMuPlayer ([https://www.mumuplayer.com/pt/](https://www.mumuplayer.com/pt/)) no ANDROID 12:**
+   - O **[MuMuPlayer](https://www.mumuplayer.com/pt/)** é o **emulador suportado** pelo projeto.
    - ⚠️ *Caso o seu MuMuPlayer esteja no Android 15 (ou outra versão), desinstale a imagem atual e instale a imagem do **Android 12**.*
 2. **Permissão ROOT Ativada:**
    - Ative o **Modo Root** nas configurações do MuMuPlayer e mantenha a **Depuração ADB** habilitada.
