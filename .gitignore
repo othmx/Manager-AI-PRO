@@ -1,0 +1,11 @@
+accounts.txt
+*.txt
+!requirements.txt
+!instrucoes_de_uso.txt
+.manager_state.json
+platform-tools/
+ultra0-report/
+*.png
+__pycache__/
+.DS_Store
+
