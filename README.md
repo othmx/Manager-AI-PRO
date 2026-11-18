@@ -54,15 +54,16 @@ A Google Play Store possui ofertas promocionais de teste gratuito para o SKU `g1
 
 ## 🛠️ Pré-requisitos Obrigatórios
 
-1. **Emulador Android (MEmu ou MuMu) no ANDROID 12:**
-   - O emulador **PRECISA estar no Android 12**.
-   - ⚠️ *Caso o seu emulador esteja no Android 15 (ou outra versão), desinstale a imagem atual no Multi-Instância e instale a imagem do **Android 12**.*
+1. **Emulador Exclusivo — MuMuPlayer ([https://www.mumuplayer.com/pt/](https://www.mumuplayer.com/pt/)) no ANDROID 12:**
+   - O **[MuMuPlayer](https://www.mumuplayer.com/pt/)** é o **ÚNICO emulador suportado** pelo projeto.
+   - O MuMuPlayer **PRECISA estar rodando o Android 12**.
+   - ⚠️ *Caso o seu MuMuPlayer esteja no Android 15 (ou outra versão), desinstale a imagem atual e instale a imagem do **Android 12**.*
 2. **Permissão ROOT Ativada:**
-   - Ative o **Modo Root** nas configurações do emulador e mantenha a **Depuração ADB** habilitada.
+   - Ative o **Modo Root** nas configurações do MuMuPlayer e mantenha a **Depuração ADB** habilitada.
 3. **Conta Google e Aplicativos:**
    - Faça login na sua conta Gmail desejada na **Google Play Store** (a conta precisa ter um método de pagamento/cartão vinculado e **não** pode ter nenhuma assinatura ativa do Google One antes de começar).
    - Baixe o aplicativo oficial **Google One** na Play Store.
-   - Após instalar, **reinicie a emulação** e deixe a **Google Play Store** e o **Google One** abertos.
+   - Após instalar, **reinicie a emulação no MuMuPlayer** e deixe a **Google Play Store** e o **Google One** abertos.
 
 ---
 
@@ -78,8 +79,8 @@ Logo ao abrir, escolha o idioma (**Português PT-BR**, **English** ou **简体�
 
 | Opção no Menu | Função Detalhada | Regra de Desbloqueio / Segurança |
 | :--- | :--- | :--- |
-| **1. Instalar ambiente** | Verifica Python (3.10+), instala `frida==16.5.9`, encontra ou baixa o `adb` (Platform-Tools) e conecta ao emulador. | Sempre disponível. Fica **VERDE** no menu após concluído! |
-| **2. Preparar ambiente** | Exibe um alerta destacado sobre **Root + Android 12 + Login na Play Store + App Google One aberto** (exige confirmação `[✓ ENTENDI]` pelo teclado) e roda o autodiagnóstico completo. | Sempre disponível. Desbloqueia a Opção 3 após passar com sucesso. |
+| **1. Instalar ambiente** | Verifica Python (3.10+), instala `frida==16.5.9`, encontra ou baixa o `adb` (Platform-Tools) e conecta ao MuMuPlayer. | Sempre disponível. Fica **VERDE** no menu após concluído! |
+| **2. Preparar ambiente** | Exibe um alerta destacado sobre **MuMuPlayer + Root + Android 12 + Login na Play Store + App Google One aberto** (exige confirmação `[✓ ENTENDI]` pelo teclado) e roda o autodiagnóstico completo. | Sempre disponível. Desbloqueia a Opção 3 após passar com sucesso. |
 | **3. Ativar 12 Meses PRO** | Injeta a oferta `12months-eft` (`pro12`) no emulador e abre a folha de confirmação da Play Store. | Só roda se o **Passo 2** tiver passado com sucesso. Exige aceitar a oferta na tela do emulador. |
 | **4. (1) Ativar +6 Meses PRO** | Lê o `purchaseToken` atual e injeta o upgrade `6months-eft` (`pro6`) somando +6 meses (Total: 18 meses). | Só roda se o **Passo 3** tiver sido concluído e aceito no emulador. |
 | **5. (2) Ativar +6 Meses PRO** | Lê o `purchaseToken` atual e injeta o upgrade `6months-eft-2` (`pro6b`) somando +6 meses (Total: 24 meses). | Só roda se o **Passo 4** tiver sido concluído e aceito no emulador. |
@@ -93,7 +94,7 @@ Logo ao abrir, escolha o idioma (**Português PT-BR**, **English** ou **简体�
 
 ## 📖 Overview & 100% Open Source Transparency
 
-**Manager AI PRO** is a modern, safe, and interactive trilingual CLI tool that unifies environment setup, Frida `BillingClient` module injection, and subscription proration stacking for **Google AI Pro (5 TB)** using an Android 12 rooted emulator.
+**Manager AI PRO** is a modern, safe, and interactive trilingual CLI tool that unifies environment setup, Frida `BillingClient` module injection, and subscription proration stacking for **Google AI Pro (5 TB)** using **[MuMuPlayer](https://www.mumuplayer.com/pt/)** (the **only** supported emulator) running Android 12 with Root.
 
 ### How It Works Under the Hood (No Secrets)
 
@@ -116,8 +117,8 @@ python manager_ai_pro.py
 
 1. Select your language (**PT-BR**, **English**, or **Chinese**) before the CLI loads.
 2. Run **Option 1 (Install Environment)** — turns **GREEN** once Python, Frida `16.5.9`, and `adb` are ready.
-3. Run **Option 2 (Prepare Environment)** — make sure your emulator (MEmu / MuMu) has **ROOT enabled**, runs **Android 12** (if on Android 15, uninstall the image and install Android 12), is logged into your target Gmail account in Play Store, has the **Google One** app installed, and has both **Play Store** and **Google One** open after a reboot. Confirm the highlighted prompt with your keyboard (`[✓ I UNDERSTAND]`).
-4. Run **Options 3 → 4 → 5** in order (and **Option 6** if needed), accepting the **$0.00** checkout sheet inside the emulator on each step.
+3. Run **Option 2 (Prepare Environment)** — make sure you have **[MuMuPlayer](https://www.mumuplayer.com/pt/)** installed (the **only** supported emulator) with **ROOT enabled** and running **Android 12** (if on Android 15, uninstall the image and install Android 12), logged into your target Gmail account in Play Store, with the **Google One** app installed, and both **Play Store** and **Google One** kept open after a reboot. Confirm the highlighted prompt with your keyboard (`[✓ I UNDERSTAND]`).
+4. Run **Options 3 → 4 → 5** in order (and **Option 6** if needed), accepting the **$0.00** checkout sheet inside MuMuPlayer on each step.
 
 ---
 
@@ -125,7 +126,7 @@ python manager_ai_pro.py
 
 ## 📖 项目简介与 100% 开源透明说明
 
-**Manager AI PRO** 是一款支持 **葡萄牙语 (PT-BR) / 英语 (EN) / 简体中文 (ZH-CN)** 的现代化交互式命令行管理工具，集成了环境安装、模拟器自检与 **Google AI Pro (5TB)** 免费试用叠加（最高累计 30 个月）的全套流程。
+**Manager AI PRO** 是一款支持 **葡萄牙语 (PT-BR) / 英语 (EN) / 简体中文 (ZH-CN)** 的现代化交互式命令行管理工具，集成了环境安装、模拟器自检与 **Google AI Pro (5TB)** 免费试用叠加（最高累计 30 个月）的全套流程。本项目**唯一支持的模拟器为 [MuMu 模拟器 (MuMuPlayer)](https://www.mumuplayer.com/pt/)**。
 
 ### 核心原理（完全公开透明）
 
@@ -147,8 +148,8 @@ python manager_ai_pro.py
 
 1. 启动前可自由选择语言（**PT-BR / EN / 简体中文**）。
 2. **1. 安装环境**：自动检查 Python、安装 `frida==16.5.9`、配置 `adb`，完成后菜单项变为**绿色**。
-3. **2. 准备环境**：确保模拟器（MEmu 逍遥 / MuMu）已开启 **ROOT 权限**，且系统镜像为 **Android 12**（若为 Android 15 请卸载并重装 Android 12 镜像），在 Play 商店登录目标谷歌账号并下载 **Google One**，重启模拟器后保持 **Play 商店** 和 **Google One** 处于打开状态。使用键盘方向键选择 `[✓ 我已了解]` 确认高亮提示后自动执行环境自检。
-4. 依次执行 **3 → 4 → 5**（以及备用选项 **6**），每一步都会在模拟器中弹出收银台，在模拟器屏幕确认 0 元并点击订阅后即可进入下一步。
+3. **2. 准备环境**：确保 **[MuMu 模拟器 (MuMuPlayer)](https://www.mumuplayer.com/pt/)**（唯一支持的模拟器）已开启 **ROOT 权限**，且系统镜像为 **Android 12**（若为 Android 15 请卸载并重装 Android 12 镜像），在 Play 商店登录目标谷歌账号并下载 **Google One**，重启模拟器后保持 **Play 商店** 和 **Google One** 处于打开状态。使用键盘方向键选择 `[✓ 我已了解]` 确认高亮提示后自动执行环境自检。
+4. 依次执行 **3 → 4 → 5**（以及备用选项 **6**），每一步都会在 MuMu 模拟器中弹出收银台，在模拟器屏幕确认 0 元并点击订阅后即可进入下一步。
 
 ---
 

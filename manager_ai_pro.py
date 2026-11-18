@@ -283,14 +283,16 @@ T = {
         # Step 2
         "s2_warning_title": "⚠️  ATENÇÃO CRÍTICA — LEIA COM ATENÇÃO ANTES DE CONTINUAR  ⚠️",
         "s2_warning_lines": [
-            "1. EMULADOR & ROOT: Você PRECISA ativar a permissão ROOT no seu emulador (MEmu / MuMu).",
-            "2. ANDROID 12 OBRIGATÓRIO: O emulador PRECISA estar rodando o ANDROID 12.",
+            "1. EMULADOR EXCLUSIVO (MuMuPlayer): O MuMuPlayer é o ÚNICO emulador suportado!",
+            "   → Download oficial: https://www.mumuplayer.com/pt/",
+            "   → Você PRECISA ativar a permissão ROOT nas configurações do MuMuPlayer.",
+            "2. ANDROID 12 OBRIGATÓRIO: O MuMuPlayer PRECISA estar rodando o ANDROID 12.",
             "   → Caso esteja no Android 15 (ou outra versão), DESINSTALE a imagem atual e instale a imagem do Android 12!",
             "3. CONTA & APPS: Agora é a hora de:",
             "   • Logar na sua conta Gmail desejada na Google Play Store (com método de pagamento/cartão vinculado e sem assinatura ativa)",
             "   • Baixar e instalar o aplicativo oficial \"Google One\" na Play Store",
             "4. REINICIAR & MANTER ABERTO: Após instalar o Google One, REINICIE a emulação,",
-            "   e deixe os aplicativos \"Google Play Store\" e \"Google One\" ABERTOS no emulador!",
+            "   e deixe os aplicativos \"Google Play Store\" e \"Google One\" ABERTOS no MuMuPlayer!",
         ],
         "s2_accept_hint": "Use as setas [← / →] ou [↑ / ↓] para selecionar e pressione [ENTER] para confirmar:",
         "s2_btn_cancel": "[ Voltar ao Menu ]",
@@ -329,11 +331,12 @@ T = {
     • Reserva (Opção 6): Pacote extra de +6 meses (caso algum anterior falhe ou para chegar a 30 meses)
 
 【PRÉ-REQUISITOS OBRIGATÓRIOS】
-  1. Emulador (MEmu / MuMu) instalado com imagem do ANDROID 12 (se estiver no Android 15, remova e crie Android 12).
-  2. Permissão ROOT ativada nas configurações do emulador e Depuração ADB ligada.
+  1. Emulador MuMuPlayer (ÚNICO EMULADOR SUPORTADO — https://www.mumuplayer.com/pt/) instalado com imagem do ANDROID 12
+     (caso esteja no Android 15, desinstale a imagem atual e instale a do Android 12).
+  2. Permissão ROOT ativada nas configurações do MuMuPlayer e Depuração ADB ligada.
   3. Conta Google logada na Play Store com método de pagamento válido vinculado (cartão).
   4. A conta NÃO deve possuir nenhuma assinatura Google One pré-existente antes do Passo 1.
-  5. App "Google One" instalado via Play Store. Após instalar, reinicie o emulador e deixe Play Store + Google One abertos.
+  5. App "Google One" instalado via Play Store. Após instalar, reinicie o MuMuPlayer e deixe Play Store + Google One abertos.
 
 【COMO FUNCIONA A ACUMULAÇÃO (EXPLICAÇÃO TÉCNICA 100% TRANSPARENTE)】
   Comprar diretamente apenas substituiria o plano mantendo a mesma data. Para somar os períodos,
@@ -420,14 +423,16 @@ T = {
         # Step 2
         "s2_warning_title": "⚠️  CRITICAL REQUIREMENT — READ CAREFULLY BEFORE CONTINUING  ⚠️",
         "s2_warning_lines": [
-            "1. EMULATOR & ROOT: You MUST enable ROOT permission in your emulator (MEmu / MuMu).",
-            "2. ANDROID 12 REQUIRED: Your emulator instance MUST be running ANDROID 12.",
+            "1. EXCLUSIVE EMULATOR (MuMuPlayer): MuMuPlayer is the ONLY supported emulator!",
+            "   → Official download: https://www.mumuplayer.com/pt/",
+            "   → You MUST enable ROOT permission in MuMuPlayer settings.",
+            "2. ANDROID 12 REQUIRED: Your MuMuPlayer instance MUST be running ANDROID 12.",
             "   → If you are on Android 15 (or another version), UNINSTALL that image and install an Android 12 image!",
             "3. ACCOUNT & APPS: Now is the time to:",
             "   • Sign in to your target Gmail account in Google Play Store (with a payment card linked and no active Google One sub)",
             "   • Download and install the official \"Google One\" app from the Play Store",
-            "4. RESTART & KEEP OPEN: After installing Google One, RESTART the emulator instance,",
-            "   and leave both \"Google Play Store\" and \"Google One\" OPEN on the emulator!",
+            "4. RESTART & KEEP OPEN: After installing Google One, RESTART the MuMuPlayer instance,",
+            "   and leave both \"Google Play Store\" and \"Google One\" OPEN on MuMuPlayer!",
         ],
         "s2_accept_hint": "Use arrow keys [← / →] or [↑ / ↓] to select and press [ENTER] to confirm:",
         "s2_btn_cancel": "[ Back to Menu ]",
@@ -466,11 +471,12 @@ T = {
     • Backup (Option 6): Extra +6 months package (if a previous step failed or to reach up to 30 months)
 
 【MANDATORY PREREQUISITES】
-  1. Emulator (MEmu / MuMu) running an ANDROID 12 system image (if on Android 15, uninstall it and install Android 12).
-  2. ROOT permission enabled in emulator settings and ADB debugging active.
+  1. MuMuPlayer Emulator (THE ONLY SUPPORTED EMULATOR — https://www.mumuplayer.com/pt/) running an ANDROID 12 system image
+     (if on Android 15, uninstall it and install Android 12).
+  2. ROOT permission enabled in MuMuPlayer settings and ADB debugging active.
   3. Target Google account signed into Play Store with a valid payment method (card) bound.
   4. Account must NOT have any existing Google One subscription prior to Step 1.
-  5. "Google One" app installed from Play Store. After installing, restart the emulator and keep Play Store + Google One open.
+  5. "Google One" app installed from Play Store. After installing, restart MuMuPlayer and keep Play Store + Google One open.
 
 【HOW STACKING WORKS (100% TRANSPARENT TECHNICAL EXPLANATION)】
   A direct purchase would simply replace the tier without extending the expiration date.
@@ -554,13 +560,15 @@ T = {
         # Step 2
         "s2_warning_title": "⚠️  重要前置提示 —— 继续前请仔细阅读  ⚠️",
         "s2_warning_lines": [
-            "1. 模拟器与 ROOT：必须在模拟器（逍遥 MEmu / MuMu）设置中开启【ROOT 权限】。",
-            "2. 必须使用 ANDROID 12：模拟器镜像版本必须为【Android 12】。",
+            "1. 唯一支持模拟器 (MuMuPlayer)：仅支持使用【MuMu 模拟器 (MuMuPlayer)】！",
+            "   → 官方下载地址：https://www.mumuplayer.com/pt/",
+            "   → 必须在 MuMu 模拟器设置中开启【ROOT 权限】。",
+            "2. 必须使用 ANDROID 12：MuMu 模拟器镜像版本必须为【Android 12】。",
             "   → 如果当前是 Android 15（或其它版本），请卸载当前镜像并重新安装 Android 12 镜像！",
             "3. 登录账号与安装应用：现在请在模拟器中完成：",
             "   • 在 Google Play 商店登录目标 Gmail 账号（已绑卡，且当前没有任何 Google One 订阅）",
             "   • 在 Play 商店搜索并下载安装「Google One」应用",
-            "4. 重启并保持打开：安装完 Google One 后，请【重启模拟器】，",
+            "4. 重启并保持打开：安装完 Google One 后，请【重启 MuMu 模拟器】，",
             "   重启后打开「Play 商店」和「Google One」并保持在后台/前台运行！",
         ],
         "s2_accept_hint": "请使用方向键 [← / →] 或 [↑ / ↓] 选择「我已了解」并按 [回车] 确认：",
