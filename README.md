@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Frida 16.5.9](https://img.shields.io/badge/Frida-16.5.9-orange.svg)](https://frida.re/)
-[![Android 12](https://img.shields.io/badge/Android-12%20(Root)-brightgreen.svg)](#)
+[![MuMuPlayer Android 12](https://img.shields.io/badge/MuMuPlayer-Android%2012%20(Root)-brightgreen.svg)](https://www.mumuplayer.com/pt/)
 
 ---
 
@@ -23,7 +23,7 @@
 
 ## 📖 Visão Geral e Transparência 
 
-O **Manager AI PRO** é uma interface de linha de comando (CLI) interativa, moderna e 100% transparente que unifica todas as etapas de verificação de ambiente, injeção do `BillingClient` via Frida e acumulação (stacking) de ofertas gratuitas do plano **Google AI Pro (5 TB)** diretamente pelo aplicativo oficial **Google One** em um emulador Android 12 com Root.
+O **Manager AI PRO** é uma interface de linha de comando (CLI) interativa, moderna e 100% transparente que unifica todas as etapas de verificação de ambiente, injeção do `BillingClient` via Frida e acumulação (stacking) de ofertas gratuitas do plano **Google AI Pro (5 TB)** diretamente pelo aplicativo oficial **Google One** no emulador **[MuMuPlayer](https://www.mumuplayer.com/pt/)** (Android 12 com Root).
 
 ### Como funciona por baixo dos panos?
 
@@ -47,7 +47,7 @@ A Google Play Store possui ofertas promocionais de teste gratuito para o SKU `g1
    - No modo `CHARGE_FULL_PRICE (5)`, o sistema de faturamento da Google Play converte e adia integralmente o período gratuito restante, somando os novos 6 meses ao final do seu ciclo atual com cobrança imediata de **$0,00**.
 
 3. **Segurança e Privacidade:**
-   - Todo o código roda **100% localmente** entre o seu computador e o seu emulador Android via ADB.
+   - Todo o código roda **100% localmente** entre o seu computador e o seu MuMuPlayer via ADB.
    - Nenhuma senha, token ou dado de cartão é enviado para servidores externos.
 
 ---
@@ -66,13 +66,47 @@ A Google Play Store possui ofertas promocionais de teste gratuito para o SKU `g1
 
 ---
 
-## 🚀 Como Usar o Manager AI PRO
+## 🚀 Como Instalar e Usar o Manager AI PRO
 
-Basta dar dois cliques em **`Manager AI PRO.bat`** (no Windows) ou executar via terminal:
+Você pode iniciar o **Manager AI PRO** de **3 formas diferentes** — escolha a que preferir:
 
-```bash
-python manager_ai_pro.py
-```
+> [!TIP]
+> ### ⚡ Opção 1: Comando Rápido em 1 Linha (PowerShell `iex` / `curl`) — *Mais Rápido!*
+> Abra o **PowerShell** do Windows e cole qualquer um dos comandos abaixo. Ele baixa o projeto automaticamente para a sua Área de Trabalho (`Desktop\Manager-AI-PRO`) e já abre o painel CLI:
+>
+> **Via PowerShell (`irm | iex`):**
+> ```powershell
+> irm https://raw.githubusercontent.com/othmx/Manager-AI-PRO/main/install.ps1 | iex
+> ```
+> **Ou via `curl.exe` + PowerShell:**
+> ```powershell
+> curl.exe -fsSL https://raw.githubusercontent.com/othmx/Manager-AI-PRO/main/install.ps1 | powershell -NoProfile -ExecutionPolicy Bypass -Command -
+> ```
+
+---
+
+> [!IMPORTANT]
+> ### 🖱️ Opção 2: Modo 1-Clique no Windows (Executável `.bat`)
+> Se você já baixou ou clonou a pasta do projeto, basta dar **dois cliques** no arquivo:
+> ```text
+> 📁 Manager AI PRO.bat
+> ```
+> *(Ele configura automaticamente a codificação UTF-8 e abre a interface colorida do gerenciador).*
+
+---
+
+> [!NOTE]
+> ### 💻 Opção 3: Execução Manual via Terminal (`git clone` + `python`)
+> Caso prefira clonar e rodar manualmente pelo terminal:
+> ```bash
+> git clone https://github.com/othmx/Manager-AI-PRO.git
+> cd Manager-AI-PRO
+> python manager_ai_pro.py
+> ```
+
+---
+
+### 📋 Opções do Menu Interativo
 
 Logo ao abrir, escolha o idioma (**Português PT-BR**, **English** ou **简体中文**). Você verá o menu interativo:
 
@@ -84,7 +118,8 @@ Logo ao abrir, escolha o idioma (**Português PT-BR**, **English** ou **简体�
 | **4. (1) Ativar +6 Meses PRO** | Lê o `purchaseToken` atual e injeta o upgrade `6months-eft` (`pro6`) somando +6 meses (Total: 18 meses). | Só roda se o **Passo 3** tiver sido concluído e aceito no emulador. |
 | **5. (2) Ativar +6 Meses PRO** | Lê o `purchaseToken` atual e injeta o upgrade `6months-eft-2` (`pro6b`) somando +6 meses (Total: 24 meses). | Só roda se o **Passo 4** tiver sido concluído e aceito no emulador. |
 | **6. Reserva +6 Meses** | Injeta o pacote reserva `6months-eft-ss-2026` (`pro6c`) caso alguma opção anterior não tenha funcionado ou para somar +6 meses extras. | Disponível com aviso obrigatório de aceitação na tela do emulador. |
-| **7. Ajuda** | Exibe o manual completo de instruções e solução de problemas traduzido no idioma selecionado. | Sempre disponível. |
+| **7. Ajuda** | Exibe o manual completo de instruções e solução de problemas com destaques coloridos no idioma selecionado. | Sempre disponível. |
+| **O. Consultar ofertas** | Lista todas as ofertas gratuitas disponíveis na conta atual sem realizar assinatura (Risco Zero). | Sempre disponível. |
 | **8. Sair** | Encerra o gerenciador com segurança. | Sempre disponível. |
 
 ---
@@ -106,13 +141,39 @@ Google Play's billing backend serves hidden free-trial offer IDs for product SKU
 
 To **stack** trial periods instead of replacing them, the script reads the active subscription's `purchaseToken` from `/data/data/com.android.vending/databases/library.db` and invokes `BillingFlowParams.SubscriptionUpdateParams` with `setReplaceProrationMode(5)` (`CHARGE_FULL_PRICE`). This instructs Google Play to prorate and defer your remaining trial balance while adding the new 6-month trial at **$0.00 due today**.
 
-### 🚀 Quick Start
+---
 
-Double-click **`Manager AI PRO.bat`** or run:
+## 🚀 How to Install & Launch Manager AI PRO
 
-```bash
-python manager_ai_pro.py
-```
+Choose any of the **3 installation/launch methods** below:
+
+> [!TIP]
+> ### ⚡ Method 1: Instant One-Line Command (PowerShell `iex` / `curl`) — *Fastest!*
+> Open **Windows PowerShell** and run either command below to automatically download the project to `Desktop\Manager-AI-PRO` and launch the CLI immediately:
+>
+> **Via PowerShell (`irm | iex`):**
+> ```powershell
+> irm https://raw.githubusercontent.com/othmx/Manager-AI-PRO/main/install.ps1 | iex
+> ```
+> **Or via `curl.exe` + PowerShell:**
+> ```powershell
+> curl.exe -fsSL https://raw.githubusercontent.com/othmx/Manager-AI-PRO/main/install.ps1 | powershell -NoProfile -ExecutionPolicy Bypass -Command -
+> ```
+
+> [!IMPORTANT]
+> ### 🖱️ Method 2: 1-Click Windows Launcher (`.bat`)
+> If you already downloaded the repository folder, simply **double-click**:
+> ```text
+> 📁 Manager AI PRO.bat
+> ```
+
+> [!NOTE]
+> ### 💻 Method 3: Manual Terminal Execution (`git clone` + `python`)
+> ```bash
+> git clone https://github.com/othmx/Manager-AI-PRO.git
+> cd Manager-AI-PRO
+> python manager_ai_pro.py
+> ```
 
 1. Select your language (**PT-BR**, **English**, or **Chinese**) before the CLI loads.
 2. Run **Option 1 (Install Environment)** — turns **GREEN** once Python, Frida `16.5.9`, and `adb` are ready.
@@ -137,34 +198,55 @@ python manager_ai_pro.py
 2. **订阅升级叠加机制：**
    - 脚本自动从 Play 商店数据库 `/data/data/com.android.vending/databases/library.db` 中读取当前活跃订阅的 `purchaseToken`，并通过 `BillingFlowParams.SubscriptionUpdateParams.setOldPurchaseToken(token).setReplaceProrationMode(5)`（`CHARGE_FULL_PRICE`）拉起 Play 收银台，从而将剩余试用期折算顺延，实现 0 元叠加。
 
-### 🚀 快速启动
+---
 
-双击 **`Manager AI PRO.bat`** 或在终端运行：
+## 🚀 安装与快速启动（3 种方式任选）
 
-```bash
-python manager_ai_pro.py
-```
+> [!TIP]
+> ### ⚡ 方式一：PowerShell 一键命令 (`iex` / `curl`) —— *最快推荐！*
+> 打开 Windows **PowerShell**，复制并运行以下任意一条命令，即可自动下载到桌面 `Desktop\Manager-AI-PRO` 并立即启动 CLI 界面：
+>
+> **PowerShell (`irm | iex`)：**
+> ```powershell
+> irm https://raw.githubusercontent.com/othmx/Manager-AI-PRO/main/install.ps1 | iex
+> ```
+> **或使用 `curl.exe`：**
+> ```powershell
+> curl.exe -fsSL https://raw.githubusercontent.com/othmx/Manager-AI-PRO/main/install.ps1 | powershell -NoProfile -ExecutionPolicy Bypass -Command -
+> ```
 
-1. 启动前可自由选择语言（**PT-BR / EN / 简体中文**）。
-2. **1. 安装环境**：自动检查 Python、安装 `frida==16.5.9`、配置 `adb`，完成后菜单项变为**绿色**。
-3. **2. 准备环境**：确保 **[MuMu 模拟器 (MuMuPlayer)](https://www.mumuplayer.com/pt/)**（唯一支持的模拟器）已开启 **ROOT 权限**，且系统镜像为 **Android 12**（若为 Android 15 请卸载并重装 Android 12 镜像），在 Play 商店登录目标谷歌账号并下载 **Google One**，重启模拟器后保持 **Play 商店** 和 **Google One** 处于打开状态。使用键盘方向键选择 `[✓ 我已了解]` 确认高亮提示后自动执行环境自检。
-4. 依次执行 **3 → 4 → 5**（以及备用选项 **6**），每一步都会在 MuMu 模拟器中弹出收银台，在模拟器屏幕确认 0 元并点击订阅后即可进入下一步。
+> [!IMPORTANT]
+> ### 🖱️ 方式二：Windows 双击启动 (`.bat`)
+> 下载解压或克隆项目后，直接**双击**运行：
+> ```text
+> 📁 Manager AI PRO.bat
+> ```
+
+> [!NOTE]
+> ### 💻 方式三：终端手动克隆运行 (`git clone` + `python`)
+> ```bash
+> git clone https://github.com/othmx/Manager-AI-PRO.git
+> cd Manager-AI-PRO
+> python manager_ai_pro.py
+> ```
 
 ---
 
 ## 📂 Estrutura do Projeto / Project Structure / 目录结构
 
+Todos os antigos arquivos `.bat` numerados e `.txt` avulsos foram **100% unificados, estruturados e comentados** dentro de `manager_ai_pro.py`, mantendo o repositório limpo e organizado:
+
 ```text
 Manager-AI-PRO/
-├── Manager AI PRO.bat                 # Inicializador rápido Windows (1 clique)
-├── manager_ai_pro.py                  # CLI Principal Trilíngue (PT-BR, EN, ZH-CN) com controle de etapas
-├── ultra0.py                          # Motor principal de injeção Frida + BillingClient + ADB
-├── setup_env.py                       # Script auxiliar de verificação de dependências
-├── query_sku.py                       # Utilitário para inspecionar SKUs e Offers via Frida
-├── instrucoes_de_uso.txt              # Guia rápido de uso
-├── requirements.txt                   # Dependências Python (frida==16.5.9)
-├── LICENSE                            # Licença Open Source MIT
-└── README.md                          # Documentação completa Trilíngue
+├── Manager AI PRO.bat     # 🖱️ Inicializador rápido Windows (1 clique)
+├── install.ps1            # ⚡ Instalador rápido 1-linha (irm ... | iex / curl)
+├── manager_ai_pro.py      # 🧠 CLI Principal Trilíngue (unifica todos os passos, setup e ajuda colorida)
+├── ultra0.py              # ⚙️ Motor de injeção Frida + BillingClient + ADB
+├── setup_env.py           # 🔧 Módulo auxiliar de ambiente
+├── query_sku.py           # 🔍 Utilitário para inspecionar SKUs e Offers via Frida
+├── requirements.txt       # 📦 Dependências Python (frida==16.5.9)
+├── LICENSE                # ⚖️ Licença Open Source MIT
+└── README.md              # 📖 Documentação completa Trilíngue
 ```
 
 ## 📄 Licença / License
